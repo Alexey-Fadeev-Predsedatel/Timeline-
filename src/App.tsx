@@ -6,15 +6,15 @@ import { useState } from 'react';
 // Чтобы они отобразились, загрузите ваши фото и видео в папку public/media/
 // с указанными ниже именами (или переименуйте пути здесь, когда загрузите файлы).
 const galleryItems = [
-  { type: 'image', src: '/media/photo1.jpg', alt: 'Исторический артефакт - пулеметная лента' },
-  { type: 'image', src: '/media/photo2.jpg', alt: 'Историческая икона' },
-  { type: 'image', src: '/media/photo3.jpg', alt: 'Военная форма' },
-  { type: 'image', src: '/media/photo4.jpg', alt: 'Экспозиция с каской' },
-  { type: 'image', src: '/media/photo5.jpg', alt: 'Обзор зала' },
-  { type: 'image', src: '/media/photo6.jpg', alt: 'Посетители выставки' },
-  { type: 'image', src: '/media/photo7.jpg', alt: 'Исторические артефакты' },
-  { type: 'video', src: '/media/video1.MOV', alt: 'Видео-обзор выставки 1' }, 
-  { type: 'video', src: '/media/video2.MOV', alt: 'Видео-обзор выставки 2' },
+  { type: 'image', src: './media/photo1.jpg', alt: 'Исторический артефакт - пулеметная лента' },
+  { type: 'image', src: './media/photo2.jpg', alt: 'Историческая икона' },
+  { type: 'image', src: './media/photo3.jpg', alt: 'Военная форма' },
+  { type: 'image', src: './media/photo4.jpg', alt: 'Экспозиция с каской' },
+  { type: 'image', src: './media/photo5.jpg', alt: 'Обзор зала' },
+  { type: 'image', src: './media/photo6.jpg', alt: 'Посетители выставки' },
+  { type: 'image', src: './media/photo7.jpg', alt: 'Исторические артефакты' },
+  { type: 'video', src: './media/video1.MOV', alt: 'Видео-обзор выставки 1' }, 
+  { type: 'video', src: './media/video2.MOV', alt: 'Видео-обзор выставки 2' },
 ];
 
 const eras = [
@@ -36,7 +36,7 @@ export default function App() {
         <div 
           className="absolute inset-0 z-0 opacity-20 scale-105"
           style={{
-            backgroundImage: `url('/media/photo2.jpg')`,
+            backgroundImage: `url('./media/photo2.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'grayscale(100%) contrast(120%)'
