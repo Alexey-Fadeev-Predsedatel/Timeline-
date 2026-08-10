@@ -5,7 +5,12 @@ import { useState } from 'react';
 // Медиафайлы выставки. 
 // Чтобы они отобразились, загрузите ваши фото и видео в папку public/media/
 // с указанными ниже именами (или переименуйте пути здесь, когда загрузите файлы).
-const getMediaUrl = (path: string) => (import.meta.env.BASE_URL + path).replace('//', '/');
+const getMediaUrl = (path: string) => {
+  const base = import.meta.env.BASE_URL;
+  const cleanBase = base.endsWith('/') ? base : base + '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return cleanBase + cleanPath;
+};
 
 const galleryItems = [
   { type: 'image', src: getMediaUrl('media/photo1.jpg'), alt: 'Исторический артефакт - пулеметная лента' },
