@@ -5,18 +5,18 @@ import { useState } from 'react';
 // Медиафайлы выставки. 
 // Чтобы они отобразились, загрузите ваши фото и видео в папку public/media/
 // с указанными ниже именами (или переименуйте пути здесь, когда загрузите файлы).
-import { photo1_jpg, photo2_jpg, photo3_jpg, photo4_jpg, photo5_jpg, photo6_jpg, photo7_jpg, video1_MOV, video2_MOV } from './mediaData';
+const getMediaUrl = (path: string) => (import.meta.env.BASE_URL + path).replace('//', '/');
 
 const galleryItems = [
-  { type: 'image', src: photo1_jpg, alt: 'Исторический артефакт - пулеметная лента' },
-  { type: 'image', src: photo2_jpg, alt: 'Историческая икона' },
-  { type: 'image', src: photo3_jpg, alt: 'Военная форма' },
-  { type: 'image', src: photo4_jpg, alt: 'Экспозиция с каской' },
-  { type: 'image', src: photo5_jpg, alt: 'Обзор зала' },
-  { type: 'image', src: photo6_jpg, alt: 'Посетители выставки' },
-  { type: 'image', src: photo7_jpg, alt: 'Исторические артефакты' },
-  { type: 'video', src: video1_MOV, alt: 'Видео-обзор выставки 1' }, 
-  { type: 'video', src: video2_MOV, alt: 'Видео-обзор выставки 2' },
+  { type: 'image', src: getMediaUrl('media/photo1.jpg'), alt: 'Исторический артефакт - пулеметная лента' },
+  { type: 'image', src: getMediaUrl('media/photo2.jpg'), alt: 'Историческая икона' },
+  { type: 'image', src: getMediaUrl('media/photo3.jpg'), alt: 'Военная форма' },
+  { type: 'image', src: getMediaUrl('media/photo4.jpg'), alt: 'Экспозиция с каской' },
+  { type: 'image', src: getMediaUrl('media/photo5.jpg'), alt: 'Обзор зала' },
+  { type: 'image', src: getMediaUrl('media/photo6.jpg'), alt: 'Посетители выставки' },
+  { type: 'image', src: getMediaUrl('media/photo7.jpg'), alt: 'Исторические артефакты' },
+  { type: 'video', src: getMediaUrl('media/video1.MOV'), alt: 'Видео-обзор выставки 1' }, 
+  { type: 'video', src: getMediaUrl('media/video2.MOV'), alt: 'Видео-обзор выставки 2' },
 ];
 
 const eras = [
@@ -38,7 +38,7 @@ export default function App() {
         <div 
           className="absolute inset-0 z-0 opacity-20 scale-105"
           style={{
-            backgroundImage: `url('${photo2_jpg}')`,
+            backgroundImage: `url('${getMediaUrl('media/photo2.jpg')}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'grayscale(100%) contrast(120%)'
